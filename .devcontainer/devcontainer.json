@@ -3,9 +3,6 @@
 {
 	"dockerFile": "Dockerfile",
 	"build": {
-		"args": {
-			"WORKSPACE": "${containerWorkspaceFolder}"
-		}
 	},
 	"remoteUser": "root",
 	"runArgs": [
@@ -19,6 +16,8 @@
 		// "--volume=ansible:/ansible",
 		"--ipc=host"
 	],
+	"workspaceMount": "source=${localWorkspaceFolder}/ansible,target=/ansible,type=bind",
+  	"workspaceFolder": "/ansible",
 	"containerEnv": {
 		"DISPLAY": "${localEnv:DISPLAY}", // Needed for GUI try ":0" for windows
 		"WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}",
