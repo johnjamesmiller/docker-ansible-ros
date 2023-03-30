@@ -1,30 +1,34 @@
 # docker-ansible-ros
-running ansible in a docker to administer ROS2 based systems
+Running ansible in a docker to administer ROS2 based systems
 
-ansible docker setup from https://github.com/willhallonline/docker-ansible
+Ansible docker setup from https://github.com/willhallonline/docker-ansible
+
 devcontainer setup from https://github.com/athackst/vscode_ros2_workspace
 
 # Todo
 
-* define inventory 
-  * in inventory folder instead of default /etc/ansible/hosts 
-  * or maybe map hosts file into docker? 
-  * https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html
-* generate an ansible.cfg file and get ansible loading from there  https://github.com/ansible/ansible/blob/devel/examples/ansible.cfg
+* map in ssh
 
 
+# Inventory
+
+Target machines are specified in /ansible/inventory/robots
+
+The ansible process knows to look here because of the inventory setting specified in ansible.cfg
 
 
 # Ansibile config
 
-the config file is searched fo rin the following locations
+Config generated with `ansible-config init --disabled -t all > ansible.cfg` and lives in /ansible/ansible.cfg inside the container.
+
+The config location is given to the ansible process via environment variable ANSIBLE_CONFIG specified in the Dockerfile.
+
+By default the ansible process searches for the config file the following locations
+
+* ANSIBLE_CONFIG (environment variable if set)
+* ansible.cfg (in the current directory)
+* ~/.ansible.cfg (in the home directory)
+* /etc/ansible/ansible.cfg
+
 https://docs.ansible.com/ansible/latest/reference_appendices/config.html#ansible-configuration-settings-locations
-
-    ANSIBLE_CONFIG (environment variable if set)
-
-    ansible.cfg (in the current directory)
-
-    ~/.ansible.cfg (in the home directory)
-
-    /etc/ansible/ansible.cfg
 
