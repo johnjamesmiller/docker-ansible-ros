@@ -8,6 +8,7 @@ devcontainer setup from https://github.com/athackst/vscode_ros2_workspace
 # Todo
 
 * map in ssh
+* install developers public ssh keys to all robots
 
 
 # Inventory
