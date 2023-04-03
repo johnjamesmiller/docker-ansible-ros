@@ -5,6 +5,7 @@
 	"build": {
 	},
 	"remoteUser": "root",
+	// "remoteUser": "${UID}:${GID}",
 	"runArgs": [
 		"--network=host",
 		"--cap-add=SYS_PTRACE",
@@ -12,18 +13,20 @@
 		"--security-opt=apparmor:unconfined",
 		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
 		"--volume=/mnt/wslg:/mnt/wslg",
-		"--volume=/mnt/wslg:/mnt/wslg",
-		// "--volume=ansible:/ansible",
+		"--volume=/home/john/.ssh:/root/.ssh-from-host:ro",
+		"--volume=/home/john/.formant:/root/.formant-from-host:ro",
+		// "--volume=$SSH_AUTH_SOCK:$SSH_AUTH_SOCK",
 		"--ipc=host"
 	],
 	"workspaceMount": "source=${localWorkspaceFolder}/ansible,target=/ansible,type=bind",
-  	"workspaceFolder": "/ansible",
+	"workspaceFolder": "/ansible",
 	"containerEnv": {
 		"DISPLAY": "${localEnv:DISPLAY}", // Needed for GUI try ":0" for windows
 		"WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}",
 		"XDG_RUNTIME_DIR": "${localEnv:XDG_RUNTIME_DIR}",
 		"PULSE_SERVER": "${localEnv:PULSE_SERVER}",
-		"LIBGL_ALWAYS_SOFTWARE": "1" // Needed for software rendering of opengl
+		"LIBGL_ALWAYS_SOFTWARE": "1", // Needed for software rendering of opengl
+		"SSH_AUTH_SOCK": "${localEnv:SSH_AUTH_SOCK}"
 	},
 	// Set *default* container specific settings.json values on container create.
 	"customizations": {
