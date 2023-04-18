@@ -1,0 +1,12 @@
+---
+- name: Exchange Keys between servers
+  become: yes
+  become_user: is_this_user_on_server_question
+  hosts: all
+  tasks:
+    - name: Copy the key add to authorized_keys using Ansible module
+      tags: run
+      authorized_key:
+        user: is_this_user_on_server_question
+        state: present
+        key: "{{ lookup('file','keys_to_push_id_rsa.pub')}}"

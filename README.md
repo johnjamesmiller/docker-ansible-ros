@@ -15,7 +15,9 @@ Running ansible in a docker to administer ROS2 based systems using formant as th
 
 # Todo
 
-* Install developers public ssh keys to all robots
+* Install developers public ssh keys to all robots. 
+* * https://docs.ansible.com/ansible/latest/collections/ansible/posix/authorized_key_module.html
+* * maybe pull straight from github? https://api.github.com/users/johnjamesmiller/keys
 * Manage docker containers from ansible 
 * * https://docs.ansible.com/ansible/2.9/modules/docker_container_module.html
 * * https://galaxy.ansible.com/community/docker
