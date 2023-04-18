@@ -1,11 +1,10 @@
 # docker-ansible-ros
-Running ansible in a docker to administer ROS2 based systems
+Running ansible in a docker to administer ROS2 based systems using formant as the vpn
 
 # Credits
 * Ansible docker setup from https://github.com/willhallonline/docker-ansible
 * devcontainer setup from https://github.com/athackst/vscode_ros2_workspace
-
-# getting started
+# Getting started
 * check this code out
 * open with vscode
 * add your robots to the inventory/robots
@@ -16,8 +15,25 @@ Running ansible in a docker to administer ROS2 based systems
 
 # Todo
 
-* map in ssh
-* install developers public ssh keys to all robots
+* Get home dir volume mount working instead of hard coding my path
+* Clean up ssh with ssh agent or better solution on user id.
+* * https://stackoverflow.com/questions/34932490/inject-hosts-ssh-keys-into-docker-machine-with-docker-compose
+* * https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
+* Install developers public ssh keys to all robots
+* Manage docker containers from ansible 
+* * https://docs.ansible.com/ansible/2.9/modules/docker_container_module.html
+* * https://galaxy.ansible.com/community/docker
+* Get package list from test machine and update prod machines to match
+* Review ros2 specific playbooks. what to include and how?
+* * https://galaxy.ansible.com/rarrais/ros
+* * https://github.com/rarrais/ansible-role-ros2
+* * https://github.com/swarmBots-ipa/ansible_automation/tree/main/tasks
+* * https://gitlab.oit.duke.edu/devil-ops/ansible-ros-desktop
+* * https://git.sr.ht/~mynameiscosmo/ansible-role-ros-install
+* * https://github.com/BrettRD/ros2-playbooks
+* Support more VPNs
+
+
 
 # Things I want to be able to do
 
@@ -34,9 +50,9 @@ The ansible process knows to look here because of the inventory setting specifie
 
 # SSH config
 
-* follow tutorials online for generating ssh keys. 
-** You probably want to protect your personal ssh key with a passphrase
-** for the key you use for ansible you will either want to leave the key unprotected or use ssh-agent
+* `ssh-keygen`
+*  * You probably want to protect your personal ssh key with a passphrase
+* * for the key you use for ansible you will either want to leave the key unprotected or use ssh-agent
 * `ssh-copy-id username@robot` to copy your public key to the authorized_keys file on each remote system
 * now make sure you can `ssh username@robot` to the robots without entering password
 
