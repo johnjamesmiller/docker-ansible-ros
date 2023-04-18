@@ -15,10 +15,6 @@ Running ansible in a docker to administer ROS2 based systems using formant as th
 
 # Todo
 
-* Get home dir volume mount working instead of hard coding my path
-* Clean up ssh with ssh agent or better solution on user id.
-* * https://stackoverflow.com/questions/34932490/inject-hosts-ssh-keys-into-docker-machine-with-docker-compose
-* * https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
 * Install developers public ssh keys to all robots
 * Manage docker containers from ansible 
 * * https://docs.ansible.com/ansible/2.9/modules/docker_container_module.html
@@ -31,6 +27,10 @@ Running ansible in a docker to administer ROS2 based systems using formant as th
 * * https://gitlab.oit.duke.edu/devil-ops/ansible-ros-desktop
 * * https://git.sr.ht/~mynameiscosmo/ansible-role-ros-install
 * * https://github.com/BrettRD/ros2-playbooks
+* Clean up ssh with ssh agent or better solution on user id.
+* * https://stackoverflow.com/questions/34932490/inject-hosts-ssh-keys-into-docker-machine-with-docker-compose
+* * https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
+* launch devcontainer with non root user https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
 * Support more VPNs
 
 

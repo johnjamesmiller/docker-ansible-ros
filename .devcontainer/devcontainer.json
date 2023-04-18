@@ -5,7 +5,6 @@
 	"build": {
 	},
 	"remoteUser": "root",
-	// "remoteUser": "${UID}:${GID}",
 	"runArgs": [
 		"--network=host",
 		"--cap-add=SYS_PTRACE",
@@ -13,11 +12,12 @@
 		"--security-opt=apparmor:unconfined",
 		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
 		"--volume=/mnt/wslg:/mnt/wslg",
-		"--volume=/home/john/.ssh:/root/.ssh-from-host:ro",
-		"--volume=/home/john/.formant:/root/.formant-from-host:ro",
-		// "--volume=$SSH_AUTH_SOCK:$SSH_AUTH_SOCK",
+		"--volume=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh:/root/.ssh-from-host:ro",
+		"--volume=${localEnv:HOME}${localEnv:USERPROFILE}/.formant:/root/.formant-from-host:ro",
 		"--ipc=host"
+		// "--volume=$SSH_AUTH_SOCK:$SSH_AUTH_SOCK",
 	],
+	"postStartCommand": "bash /ansible/ssh-keys.sh",
 	"workspaceMount": "source=${localWorkspaceFolder}/ansible,target=/ansible,type=bind",
 	"workspaceFolder": "/ansible",
 	"containerEnv": {
