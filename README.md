@@ -16,22 +16,25 @@ Running ansible in a docker to administer ROS2 based systems using formant as th
 # Todo
 
 * Install developers public ssh keys to all robots. 
-* * https://docs.ansible.com/ansible/latest/collections/ansible/posix/authorized_key_module.html
-* * maybe pull straight from github? https://api.github.com/users/johnjamesmiller/keys
+  * https://docs.ansible.com/ansible/latest/collections/ansible/posix/authorized_key_module.html
+  * maybe pull straight from github? https://api.github.com/users/johnjamesmiller/keys
 * Manage docker containers from ansible 
-* * https://docs.ansible.com/ansible/2.9/modules/docker_container_module.html
-* * https://galaxy.ansible.com/community/docker
+  * https://docs.ansible.com/ansible/2.9/modules/docker_container_module.html
+  * https://galaxy.ansible.com/community/docker
+  * https://docs.ansible.com/ansible/latest/collections/community/docker/docker_compose_module.html#ansible-collections-community-docker-docker-compose-module
 * Get package list from test machine and update prod machines to match
+  * https://groups.google.com/g/ansible-project/c/hzjGPityybs
+  * https://stackoverflow.com/questions/66371349/getting-a-list-of-differences-between-list-of-installed-packages-and-list-of-des
 * Review ros2 specific playbooks. what to include and how?
-* * https://galaxy.ansible.com/rarrais/ros
-* * https://github.com/rarrais/ansible-role-ros2
-* * https://github.com/swarmBots-ipa/ansible_automation/tree/main/tasks
-* * https://gitlab.oit.duke.edu/devil-ops/ansible-ros-desktop
-* * https://git.sr.ht/~mynameiscosmo/ansible-role-ros-install
-* * https://github.com/BrettRD/ros2-playbooks
+  * https://galaxy.ansible.com/rarrais/ros
+  * https://github.com/rarrais/ansible-role-ros2
+  * https://github.com/swarmBots-ipa/ansible_automation/tree/main/tasks
+  * https://gitlab.oit.duke.edu/devil-ops/ansible-ros-desktop
+  * https://git.sr.ht/~mynameiscosmo/ansible-role-ros-install
+  * https://github.com/BrettRD/ros2-playbooks
 * Clean up ssh with ssh agent or better solution on user id.
-* * https://stackoverflow.com/questions/34932490/inject-hosts-ssh-keys-into-docker-machine-with-docker-compose
-* * https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
+  * https://stackoverflow.com/questions/34932490/inject-hosts-ssh-keys-into-docker-machine-with-docker-compose
+  * https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
 * launch devcontainer with non root user https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
 * Support more VPNs
 
