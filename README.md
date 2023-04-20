@@ -1,17 +1,19 @@
 # docker-ansible-ros
-Running ansible in a docker to administer ROS2 based systems using formant as the vpn
+Running ansible in a docker from vscode to administer ROS2 based systems using formant as the vpn
+
+The goal is this repo could be pulled down by any admin on your team or even your CI server and used to easily get all the right software and configs on all the robots.
 
 # Credits
 * Ansible docker setup from https://github.com/willhallonline/docker-ansible
 * devcontainer setup from https://github.com/athackst/vscode_ros2_workspace
 # Getting started
-* check this code out
-* open with vscode
-* add your robots to the inventory/robots
-* make sure you can ssh to all your robots without a password. See SSH config below.
-* use re-open in container option to launch the docker container
-* run `ansible all --list-hosts` to make sure ansible are picking up your hosts
-* run `ansible all -m ping` to make sure you can connect to all the hosts
+* Check this code out
+* Open with vscode
+* Add your robots to the inventory/robots and remove localhost
+* Make sure you can ssh to all your robots without a password. See SSH config below.
+* Use 're-open in container' option to launch the docker container
+* Run `ansible all --list-hosts` to make sure ansible are picking up your hosts
+* Run `ansible all -m ping` to make sure you can connect to all the hosts
 
 # Todo
 
